@@ -6,3 +6,19 @@ reviews/
 .fe-pipeline.json
 *.tsbuildinfo
 *.zip
+
+# Documentation & Development (AI specific)
+*.md
+vendors/
+.gemini/
+.claude/
+
+# Planning & Discovery (Extra safety)
+task_plan.md
+findings.md
+progress.md
+content_draft.md
+
+# OS specific files
+.DS_Store
+Thumbs.db

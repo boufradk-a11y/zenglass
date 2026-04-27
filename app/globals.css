@@ -1,1 +1,59 @@
 @import "tailwindcss";
+
+@theme {
+  /* Colors - Deep, Stable, Professional */
+  --color-primary: #101828; /* Solid Dark */
+  --color-secondary: #0056b3; /* Classic Pro Blue */
+  --color-accent: #e67e22; /* Warning/Action Orange */
+  --color-background: #ffffff;
+  --color-foreground: #101828;
+  --color-muted: #667085;
+  --color-border: #eaecf0;
+
+  /* Radius - Sharp/Professional */
+  --radius-sm: 0px;
+  --radius-md: 2px;
+  --radius-lg: 4px;
+  --radius-xl: 4px;
+
+  /* Shadows - Flat/Solid */
+  --shadow-pro: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-bold;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .hero-overlay-solid {
+    background: linear-gradient(rgba(16, 24, 40, 0.85), rgba(16, 24, 40, 0.7));
+  }
+  
+  .btn-solid {
+    @apply bg-secondary text-white px-8 py-4 rounded-none font-bold uppercase tracking-wider hover:bg-blue-700 transition-colors inline-flex items-center justify-center;
+  }
+
+  .btn-outline {
+    @apply border-2 border-white text-white px-8 py-4 rounded-none font-bold uppercase tracking-wider hover:bg-white hover:text-primary transition-all inline-flex items-center justify-center;
+  }
+}
