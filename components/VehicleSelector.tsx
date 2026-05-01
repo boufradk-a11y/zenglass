@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { CheckSquare, Info } from "lucide-react";
 
-type GlassType = "front" | "back" | "sides" | "other";
+type GlassType = "front" | "back" | "sides" | "roof" | "other";
 
 interface VehicleSelectorProps {
   onChange: (type: GlassType) => void;
@@ -22,7 +22,8 @@ export function VehicleSelector({ onChange }: VehicleSelectorProps) {
     { id: "front" as const, label: "Pare-brise Avant" },
     { id: "back" as const, label: "Pare-brise Arrière" },
     { id: "sides" as const, label: "Vitres Latérales" },
-    { id: "other" as const, label: "Autre (Optique, Toit...)" },
+    { id: "roof" as const, label: "Toit Panoramique" },
+    { id: "other" as const, label: "Autre" },
   ];
 
   return (
@@ -36,13 +37,14 @@ export function VehicleSelector({ onChange }: VehicleSelectorProps) {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            {/* ... rest of the SVG remains the same ... */}
+            {/* Outline */}
             <path
               d="M50 40C50 20 70 10 100 10C130 10 150 20 150 40V260C150 280 130 290 100 290C70 290 50 280 50 260V40Z"
               stroke="#101828"
               strokeWidth="4"
               className="fill-white"
             />
+            {/* Front Windshield */}
             <path
               d="M65 75C65 65 80 55 100 55C120 55 135 65 135 75L130 120H70L65 75Z"
               className={cn(
@@ -51,6 +53,16 @@ export function VehicleSelector({ onChange }: VehicleSelectorProps) {
               )}
               onClick={() => handleSelect("front")}
             />
+            {/* Sunroof / Toit */}
+            <rect
+              x="75" y="130" width="50" height="70" rx="4"
+              className={cn(
+                "cursor-pointer transition-colors duration-300 stroke-2",
+                selected === "roof" ? "fill-secondary stroke-secondary" : "fill-slate-100 stroke-primary/20 hover:fill-slate-200"
+              )}
+              onClick={() => handleSelect("roof")}
+            />
+            {/* Back Windshield */}
             <path
               d="M70 220H130L135 250C135 260 120 270 100 270C80 270 65 260 65 250L70 220Z"
               className={cn(
@@ -59,6 +71,7 @@ export function VehicleSelector({ onChange }: VehicleSelectorProps) {
               )}
               onClick={() => handleSelect("back")}
             />
+            {/* Sides */}
             <path
               d="M55 130H65V170H55V130Z"
               className={cn(
