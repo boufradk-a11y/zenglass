@@ -4,18 +4,25 @@ import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { CheckSquare, Info } from "lucide-react";
 
-type GlassType = "front" | "back" | "sides" | "roof" | "other";
+export type GlassType = "front" | "back" | "sides" | "roof" | "other";
 
 interface VehicleSelectorProps {
-  onChange: (type: GlassType) => void;
+  onChange: (type: GlassType, detail?: string) => void;
 }
 
 export function VehicleSelector({ onChange }: VehicleSelectorProps) {
   const [selected, setSelected] = useState<GlassType>("front");
+  const [otherDetail, setOtherDetail] = useState("");
 
   const handleSelect = (type: GlassType) => {
     setSelected(type);
-    onChange(type);
+    onChange(type, type === "other" ? otherDetail : undefined);
+  };
+
+  const handleDetailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setOtherDetail(value);
+    onChange(selected, value);
   };
 
   const zones = [
@@ -28,8 +35,8 @@ export function VehicleSelector({ onChange }: VehicleSelectorProps) {
 
   return (
     <div className="flex flex-col gap-4 mb-4">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center bg-slate-50 p-4 md:p-6 border border-border">
-        {/* Car SVG Section - Smaller */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center bg-slate-50 p-4 md:p-6 border border-border rounded-xl">
+        {/* Car SVG Section */}
         <div className="relative flex justify-center py-2">
           <svg
             viewBox="0 0 200 300"
@@ -37,14 +44,12 @@ export function VehicleSelector({ onChange }: VehicleSelectorProps) {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            {/* Outline */}
             <path
               d="M50 40C50 20 70 10 100 10C130 10 150 20 150 40V260C150 280 130 290 100 290C70 290 50 280 50 260V40Z"
               stroke="#101828"
               strokeWidth="4"
               className="fill-white"
             />
-            {/* Front Windshield */}
             <path
               d="M65 75C65 65 80 55 100 55C120 55 135 65 135 75L130 120H70L65 75Z"
               className={cn(
@@ -53,7 +58,6 @@ export function VehicleSelector({ onChange }: VehicleSelectorProps) {
               )}
               onClick={() => handleSelect("front")}
             />
-            {/* Sunroof / Toit */}
             <rect
               x="75" y="130" width="50" height="70" rx="4"
               className={cn(
@@ -62,7 +66,6 @@ export function VehicleSelector({ onChange }: VehicleSelectorProps) {
               )}
               onClick={() => handleSelect("roof")}
             />
-            {/* Back Windshield */}
             <path
               d="M70 220H130L135 250C135 260 120 270 100 270C80 270 65 260 65 250L70 220Z"
               className={cn(
@@ -71,7 +74,6 @@ export function VehicleSelector({ onChange }: VehicleSelectorProps) {
               )}
               onClick={() => handleSelect("back")}
             />
-            {/* Sides */}
             <path
               d="M55 130H65V170H55V130Z"
               className={cn(
@@ -115,7 +117,7 @@ export function VehicleSelector({ onChange }: VehicleSelectorProps) {
           </div>
         </div>
 
-        {/* Text Selection List - Compact */}
+        {/* Text Selection List */}
         <div className="flex flex-col gap-2">
           {zones.map((zone) => (
             <button
@@ -133,6 +135,21 @@ export function VehicleSelector({ onChange }: VehicleSelectorProps) {
               {selected === zone.id ? <CheckSquare size={14} /> : <div className="w-[14px] h-[14px] border border-slate-200 rounded-sm"></div>}
             </button>
           ))}
+          
+          {/* Conditional Input for "Other" */}
+          {selected === "other" && (
+            <div className="mt-2 animate-in fade-in slide-in-from-top-2 duration-300">
+              <label className="text-[9px] font-black uppercase tracking-widest text-primary mb-1 block">Précisez le vitrage</label>
+              <input 
+                type="text" 
+                value={otherDetail}
+                onChange={handleDetailChange}
+                placeholder="Ex: Optique de phare, miroir..."
+                className="w-full bg-white border border-secondary px-4 py-3 outline-none font-medium text-xs rounded-xl text-primary"
+                autoFocus
+              />
+            </div>
+          )}
           
           <div className="mt-2 p-3 bg-slate-100/50 flex gap-2 items-center rounded-xl">
             <Info size={12} className="text-secondary shrink-0" />

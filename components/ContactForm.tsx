@@ -52,7 +52,10 @@ export function ContactForm() {
       <form className="space-y-6">
         {/* STEP 1: GLASS SELECTION */}
         <div className={cn(step !== 1 && "hidden")}>
-          <VehicleSelector onChange={(type) => setGlassType(type)} />
+          <VehicleSelector onChange={(type, detail) => {
+            setGlassType(type);
+            // On pourrait stocker le détail ici si besoin
+          }} />
           <div className="flex justify-end mt-4">
             <button 
               type="button" 
