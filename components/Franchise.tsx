@@ -1,84 +1,110 @@
-"use client";
-
-import { Gift, CheckSquare } from "lucide-react";
-import { motion } from "framer-motion";
+import Image from "next/image";
+import { CheckCircle2, Gift, ShieldCheck, Zap } from "lucide-react";
+import { MotionDiv } from "@/components/ui/motion";
+import { siteConfig } from "@/lib/site-config";
 
 export function Franchise() {
   return (
-    <section id="franchise" className="section-padding bg-slate-50">
+    <section id="franchise" className="section-padding bg-white overflow-hidden">
       <div className="container-custom">
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="bg-white border border-border shadow-pro flex flex-col lg:flex-row overflow-hidden"
-        >
-          <div className="p-10 lg:p-20 lg:w-3/5">
-            <h2 className="text-secondary font-black uppercase tracking-[0.3em] text-xs mb-4">Avantage Financier</h2>
-            <h3 className="text-3xl md:text-5xl font-black text-primary uppercase tracking-tighter mb-8 leading-tight">
-              Franchise Offerte <br />
-              <span className="text-secondary italic">jusqu'à 150€</span>
-            </h3>
-            
-            <p className="text-lg text-muted mb-10 leading-relaxed max-w-xl">
-              Votre assurance vous demande une franchise ? **Zen Glass la prend en charge.** Si vous n'avez pas de franchise, nous vous offrons un **cadeau de bienvenue** (Carte cadeau 150€).
-            </p>
-
-            <div className="space-y-4 mb-10">
-              {[
-                "Valable pour tout remplacement de pare-brise",
-                "Cumulable avec le service à domicile gratuit",
-                "Gestion directe avec toutes les assurances",
-                "Zéro avance de frais de votre côté"
-              ].map((item, i) => (
-                <motion.div 
-                  key={i} 
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 + i * 0.1 }}
-                  className="flex items-center gap-3"
-                >
-                  <CheckSquare className="text-secondary" size={20} />
-                  <span className="text-sm font-bold uppercase text-primary tracking-tight">{item}</span>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="bg-primary p-8 text-white inline-block">
-              <p className="text-xs font-bold uppercase tracking-widest mb-2 opacity-60">Offre Spéciale</p>
-              <p className="text-2xl font-black uppercase tracking-tighter">Votre sécurité au meilleur prix</p>
-            </div>
-          </div>
-
-          <div className="lg:w-2/5 bg-primary p-12 lg:p-20 flex flex-col justify-center items-center text-center text-white relative overflow-hidden">
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative z-10 flex flex-col items-center"
-            >
-              <Gift size={100} className="text-secondary mb-10" />
-              <h4 className="text-3xl font-black uppercase mb-6 tracking-tighter leading-none">
-                Vous n'avez <br /> rien à payer.
-              </h4>
-              <div className="w-16 h-1 bg-secondary mb-8"></div>
-              <p className="text-white/60 text-sm leading-relaxed mb-10">
-                Nous sommes agréés par toutes les compagnies d'assurance (AXA, Allianz, MAIF, MACIF, etc.). Le règlement se fait directement par votre assureur.
+        <div className="relative">
+          {/* Main Card */}
+          <MotionDiv 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="bg-primary rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row items-stretch min-h-[600px]"
+          >
+            {/* Left Content */}
+            <div className="flex-1 p-8 md:p-12 lg:p-16 flex flex-col justify-center relative z-10">
+              <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full mb-8 self-start border border-accent/20">
+                <Zap size={16} className="fill-current" />
+                <span className="text-xs font-black uppercase tracking-wider">Offre Exclusive</span>
+              </div>
+              
+              <h3 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-6 leading-[0.9]">
+                Franchise <br />
+                <span className="text-secondary italic">Offerte</span>
+              </h3>
+              
+              <p className="text-xl text-white/70 mb-10 leading-relaxed max-w-lg">
+                On s&apos;occupe de tout. Si vous avez une franchise, <span className="text-white font-bold">{siteConfig.name} la prend en charge jusqu&apos;à {siteConfig.offers.franchise}€</span>. 
+                Pas de franchise ? Repartez avec une <span className="text-secondary font-bold">Carte Cadeau de {siteConfig.offers.franchise}€</span>.
               </p>
-              <a href="/rendez-vous" className="w-full bg-white text-primary py-5 text-sm font-black uppercase tracking-widest hover:bg-gray-100 transition-colors">
-                Vérifier mon éligibilité
-              </a>
-            </motion.div>
-            
-            {/* Background pattern for visual interest */}
-            <div className="absolute inset-0 opacity-10 pointer-events-none">
-              <div className="absolute -bottom-10 -right-10 w-64 h-64 border-[20px] border-white rounded-full"></div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+                {[
+                  { icon: <ShieldCheck className="text-secondary" />, text: "Agréé toutes assurances" },
+                  { icon: <CheckCircle2 className="text-secondary" />, text: "0€ Avance de frais" },
+                  { icon: <Gift className="text-secondary" />, text: "Cadeau si 0€ franchise" },
+                  { icon: <Zap className="text-secondary" />, text: "Gestion 100% Zen" },
+                ].map((item, i) => (
+                  <MotionDiv 
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 + i * 0.1 }}
+                    className="flex items-center gap-3"
+                  >
+                    <div className="bg-white/5 p-2 rounded-lg">
+                      {item.icon}
+                    </div>
+                    <span className="text-sm font-bold text-white/90 uppercase tracking-tight">{item.text}</span>
+                  </MotionDiv>
+                ))}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a 
+                  href={siteConfig.links.booking} 
+                  className="bg-secondary text-white px-8 py-5 rounded-xl text-sm font-black uppercase tracking-widest hover:bg-blue-600 transition-all text-center "
+                >
+                  J&apos;en profite maintenant
+                </a>
+              </div>
             </div>
-          </div>
-        </motion.div>
+
+            {/* Right Image/Visual */}
+            <div className="flex-1 relative min-h-[400px] lg:min-h-full bg-slate-900 flex items-center justify-center overflow-hidden">
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,#0056b3_0%,transparent_70%)] opacity-20" />
+              
+              <MotionDiv
+                initial={{ opacity: 0, x: 100, scale: 0.8 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, type: "spring", bounce: 0.3 }}
+                className="relative z-10 w-full h-full flex items-center justify-center p-8"
+              >
+                <div className="relative w-full aspect-[4/3] lg:aspect-square max-w-lg">
+                  <Image 
+                    src="/camion.webp"
+                    alt={`${siteConfig.name} Mobile Service`}
+                    fill
+                    className="object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                  />
+                </div>
+              </MotionDiv>
+
+              {/* Float Badge */}
+              <MotionDiv
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-1/2 left-10 lg:left-0 z-20 bg-white p-6 rounded-2xl shadow-2xl border border-border"
+              >
+                <p className="text-primary font-black text-4xl tracking-tighter leading-none mb-1">{siteConfig.offers.franchise}€</p>
+                <p className="text-muted text-[10px] font-bold uppercase tracking-widest">Offerts ou remboursés</p>
+              </MotionDiv>
+
+              {/* Background Text */}
+              <div className="absolute -bottom-10 -right-10 select-none pointer-events-none">
+                <p className="text-[12rem] font-black text-white/[0.03] uppercase leading-none tracking-tighter">ZEN</p>
+              </div>
+            </div>
+          </MotionDiv>
+        </div>
       </div>
     </section>
   );

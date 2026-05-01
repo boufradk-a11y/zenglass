@@ -12,9 +12,10 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Services />
+      <Franchise />
+
       <TrustSection />
       <Testimonials />
-      <Franchise />
       <Footer />
     </main>
   );

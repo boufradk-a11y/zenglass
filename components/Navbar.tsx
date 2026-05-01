@@ -6,6 +6,8 @@ import { Phone, ShieldCheck, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
+import { siteConfig } from "@/lib/site-config";
+
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -18,7 +20,7 @@ export function Navbar() {
             <div className="relative w-48 h-12">
               <Image 
                 src="/zenglass_logo_fidele_name.svg" 
-                alt="Zen Glass Logo" 
+                alt={`${siteConfig.name} Logo`} 
                 fill
                 className="object-contain object-left"
               />
@@ -30,22 +32,22 @@ export function Navbar() {
             <Link href="/#services" className="text-xs font-bold uppercase tracking-widest text-primary hover:text-secondary transition-colors">
               Nos Services
             </Link>
-            <Link href="/#franchise" className="text-xs font-bold uppercase tracking-widest text-primary hover:text-secondary transition-colors">
+            <Link href="/#franchise" className="text-xs font-bold uppercase tracking-widest text-primary hover:text-secondary transition-colors text-accent">
               Franchise Offerte
             </Link>
             <div className="flex items-center gap-6">
               <a 
-                href="tel:0123456789" 
+                href={`tel:${siteConfig.phoneFull}`} 
                 className="flex items-center gap-2 text-primary font-bold border-l border-border pl-6"
               >
                 <Phone size={18} className="text-secondary" />
-                <span className="text-lg">01 23 45 67 89</span>
+                {siteConfig.phone}
               </a>
               <Link 
-                href="/rendez-vous"
-                className="bg-secondary text-white px-6 py-3 rounded-none text-xs font-bold uppercase tracking-widest hover:bg-blue-700 transition-colors"
+                href={siteConfig.links.booking}
+                className="bg-primary text-white px-6 py-3 text-[10px] font-black uppercase tracking-widest hover:bg-accent transition-colors rounded-lg"
               >
-                Prendre Rendez-vous
+                Rendez-vous
               </Link>
             </div>
           </div>
@@ -73,7 +75,7 @@ export function Navbar() {
           <Link 
             href="/rendez-vous"
             onClick={() => setMobileMenuOpen(false)}
-            className="bg-secondary text-white py-4 rounded-none text-center text-sm font-bold uppercase tracking-widest"
+            className="bg-secondary text-white py-4 rounded-xl text-center text-sm font-bold uppercase tracking-widest"
           >
             Prendre RDV
           </Link>

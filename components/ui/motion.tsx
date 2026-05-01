@@ -1,0 +1,11 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+export const MotionDiv = motion.div;
+export const MotionP = motion.p;
+export const MotionSection = motion.section;
+export const MotionH3 = motion.h3;
+export const MotionH4 = motion.h4;
+export const MotionSpan = motion.span;
+export const MotionA = motion.a;

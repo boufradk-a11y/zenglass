@@ -4,7 +4,7 @@
   /* Colors - Deep, Stable, Professional */
   --color-primary: #101828; /* Solid Dark */
   --color-secondary: #0056b3; /* Classic Pro Blue */
-  --color-accent: #e67e22; /* Warning/Action Orange */
+  --color-accent: #e11d48; /* Brand Red / Accent */
   --color-background: #ffffff;
   --color-foreground: #101828;
   --color-muted: #667085;
@@ -38,7 +38,7 @@
 
 @layer utilities {
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-10 md:py-16;
   }
 
   .container-custom {

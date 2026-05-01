@@ -1,9 +1,8 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { ShieldCheck, Phone, CheckCircle } from "lucide-react";
-import { motion } from "framer-motion";
+import { Phone, CheckCircle } from "lucide-react";
+import { siteConfig } from "@/lib/site-config";
+import { MotionDiv, MotionP } from "./ui/motion";
 
 export function Hero() {
   return (
@@ -11,7 +10,7 @@ export function Hero() {
       {/* Real Photo Background */}
       <div className="absolute inset-0 -z-10">
         <Image 
-          src="/par-brise.jpeg"
+          src="/par-brise.webp"
           alt="Expert pare-brise en intervention"
           fill
           priority
@@ -22,7 +21,7 @@ export function Hero() {
 
       <div className="container-custom">
         <div className="max-w-4xl py-10 md:py-20">
-          <motion.div 
+          <MotionDiv 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -33,42 +32,41 @@ export function Hero() {
             </h2>
             <h1 className="text-3xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] md:leading-tight uppercase">
               Remplacement de <br />
-              <span className="text-secondary">Pare-Brise</span> <br className="hidden md:block" />
-              et Réparation
+              <span className="text-secondary">Pare-Brise à domicile</span> <br className="hidden md:block" />
             </h1>
-          </motion.div>
+          </MotionDiv>
 
-          <motion.p 
+          <MotionP 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="text-base md:text-2xl text-white/90 max-w-2xl mb-8 md:mb-12 font-medium leading-relaxed"
           >
-            Profitez de votre <span className="text-white font-black underline decoration-secondary underline-offset-4">franchise offerte</span> ou d'un bonus de <span className="text-white font-black">150€</span>. <br className="hidden md:block" /> Intervention rapide à domicile ou en centre.
-          </motion.p>
+            Profitez de votre <span className="text-white font-black underline decoration-accent underline-offset-4">franchise offerte</span> et jusqu&apos;à <span className="text-white font-black">{siteConfig.offers.gift}€</span>. <br className="hidden md:block" /> Intervention rapide à domicile ou au bureau.
+          </MotionP>
 
-          <motion.div 
+          <MotionDiv 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-10 md:mb-16"
           >
             <Link 
-              href="/rendez-vous" 
-              className="bg-secondary text-white px-6 md:px-10 py-4 md:py-5 rounded-none text-xs font-black uppercase tracking-[0.2em] hover:bg-blue-700 transition-all text-center"
+              href={siteConfig.links.booking} 
+              className="bg-secondary text-white px-6 md:px-10 py-4 md:py-5 rounded-xl text-xs font-black uppercase tracking-[0.2em] hover:bg-blue-700 transition-all text-center"
             >
               Prendre Rendez-vous
             </Link>
             <a 
-              href="tel:0123456789" 
-              className="bg-white text-primary px-6 md:px-10 py-4 md:py-5 rounded-none text-xs font-black uppercase tracking-[0.2em] hover:bg-gray-100 transition-all text-center flex items-center justify-center gap-3"
+              href={`tel:${siteConfig.phoneFull}`} 
+              className="bg-white text-primary px-6 md:px-10 py-4 md:py-5 rounded-xl text-xs font-black uppercase tracking-[0.2em] hover:bg-gray-100 transition-all text-center flex items-center justify-center gap-3"
             >
               <Phone size={18} />
-              01 23 45 67 89
+              {siteConfig.phone}
             </a>
-          </motion.div>
+          </MotionDiv>
 
-          <motion.div 
+          <MotionDiv 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
@@ -86,7 +84,7 @@ export function Hero() {
               <CheckCircle className="text-secondary shrink-0" size={20} />
               <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider">Garantie à vie</span>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </div>
     </section>

@@ -97,7 +97,7 @@ export function VehicleSelector({ onChange }: VehicleSelectorProps) {
             <rect x="148" y="220" width="10" height="30" rx="2" fill="#101828" />
           </svg>
 
-          <div className="absolute top-0 right-0 bg-white border border-border p-1.5 text-[8px] font-black uppercase tracking-tighter">
+          <div className="absolute top-0 right-0 bg-white border border-border p-1.5 text-[8px] font-black uppercase tracking-tighter rounded-xl">
             {zones.find(z => z.id === selected)?.label}
           </div>
         </div>
@@ -110,18 +110,18 @@ export function VehicleSelector({ onChange }: VehicleSelectorProps) {
               type="button"
               onClick={() => handleSelect(zone.id)}
               className={cn(
-                "flex items-center justify-between px-4 py-3 border text-left transition-all",
+                "flex items-center justify-between px-4 py-3 border text-left transition-all rounded-xl",
                 selected === zone.id 
                   ? "bg-secondary border-secondary text-white" 
                   : "bg-white border-border text-primary hover:border-secondary/30"
               )}
             >
               <span className="text-[10px] font-black uppercase tracking-widest">{zone.label}</span>
-              {selected === zone.id ? <CheckSquare size={14} /> : <div className="w-[14px] h-[14px] border border-slate-200"></div>}
+              {selected === zone.id ? <CheckSquare size={14} /> : <div className="w-[14px] h-[14px] border border-slate-200 rounded-sm"></div>}
             </button>
           ))}
           
-          <div className="mt-2 p-3 bg-slate-100/50 flex gap-2 items-center">
+          <div className="mt-2 p-3 bg-slate-100/50 flex gap-2 items-center rounded-xl">
             <Info size={12} className="text-secondary shrink-0" />
             <p className="text-[9px] text-primary/60 font-bold uppercase tracking-tight">
               Cliquez sur le schéma ou utilisez la liste

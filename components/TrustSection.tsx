@@ -1,21 +1,19 @@
-"use client";
-
 import Image from "next/image";
 import { Key, FileText, Clock, ShieldCheck } from "lucide-react";
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/ui/motion";
 
 export function TrustSection() {
   return (
     <section className="section-padding bg-slate-950 text-white relative overflow-hidden">
       <div className="container-custom relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-block bg-secondary px-4 py-1 mb-6">
+            <div className="inline-block bg-accent px-4 py-1 mb-6 rounded-xl">
               <span className="text-xs font-black uppercase tracking-widest text-white">Sérénité Totale</span>
             </div>
             <h3 className="text-4xl md:text-6xl font-black tracking-tighter mb-8 uppercase leading-none">
@@ -30,29 +28,28 @@ export function TrustSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
               <div className="flex flex-col gap-4">
                 <FileText className="text-secondary" size={32} />
-                <h4 className="text-lg font-bold uppercase tracking-tight">Zéro Paperasse</h4>
+                <h4 className="text-lg font-bold uppercase tracking-tight">Service de qualité</h4>
                 <p className="text-white/40 text-sm leading-relaxed">
-                  On s'occupé de la déclaration et du suivi avec votre assureur.
+                  Nous garantissons un remplacement rapide et fiable avec 0€ à avancer et sans paperasse.
                 </p>
               </div>
               <div className="flex flex-col gap-4">
                 <Clock className="text-secondary" size={32} />
-                <h4 className="text-lg font-bold uppercase tracking-tight">Intervention 24h</h4>
+                <h4 className="text-lg font-bold uppercase tracking-tight">techniciens experts</h4>
                 <p className="text-white/40 text-sm leading-relaxed">
-                  Prise de rendez-vous immédiate et intervention sous un jour ouvré.
+                  Nos techniciens qualifiés prennent en charge tous les types de véhicules et toutes les marques avec un haut niveau de professionnalisme.
                 </p>
               </div>
-            </div>
-          </motion.div>
+            </div>          </MotionDiv>
 
-          <motion.div 
+          <MotionDiv 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="flex items-center justify-center"
           >
-            <div className="relative group overflow-hidden border border-white/10 w-full max-w-md aspect-square">
+            <div className="relative group overflow-hidden border border-white/10 w-full max-w-md aspect-square rounded-xl">
               <Image 
                 src="/cle_en_main.webp"
                 alt="Service Clés en Main"
@@ -73,7 +70,7 @@ export function TrustSection() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </div>
       
