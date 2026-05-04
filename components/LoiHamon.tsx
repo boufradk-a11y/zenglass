@@ -55,7 +55,7 @@ export function LoiHamon() {
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
               <Image 
                 src="/loi.webp" 
-                alt="Certification Loi Hamon" 
+                alt="Illustration de la Loi Hamon garantissant le libre choix du réparateur de pare-brise" 
                 fill
                 className="object-cover"
               />

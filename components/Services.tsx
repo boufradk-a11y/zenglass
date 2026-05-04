@@ -105,7 +105,7 @@ export function Services() {
             <div className="relative w-full md:w-1/2 min-h-[300px]">
               <Image 
                 src="/remplacement.png"
-                alt="Remplacement pare-brise"
+                alt="Technicien expert effectuant le remplacement d'un pare-brise à domicile"
                 fill
                 className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
               />

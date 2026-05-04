@@ -23,7 +23,7 @@ export function Navbar() {
             <div className="relative w-64 h-18">
               <Image 
                 src="/logo_propre.png" 
-                alt={`${siteConfig.name} Logo`} 
+                alt={`${siteConfig.name} - Spécialiste Pare-Brise et Vitrage Automobile`} 
                 fill
                 className="object-contain object-left"
               />
