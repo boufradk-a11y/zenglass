@@ -103,16 +103,46 @@ export function Navbar() {
           <Link href="/#services" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold uppercase tracking-widest text-primary">Services</Link>
           <Link href="/#franchise" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold uppercase tracking-widest text-primary">Franchise Offerte</Link>
           <hr className="border-border" />
-          <a href="tel:0123456789" className="flex items-center gap-3 text-secondary text-xl font-bold">
-            <Phone size={24} />
-            01 23 45 67 89
-          </a>
+          
+          <div className="space-y-4">
+            <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Nous contacter</p>
+            <div className="grid grid-cols-1 gap-3">
+              <a 
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-between px-5 py-4 bg-green-50 text-green-700 rounded-xl border border-green-100"
+              >
+                <div className="flex items-center gap-3">
+                  <MessageCircle size={20} className="text-green-500" />
+                  <span className="text-sm font-bold uppercase tracking-wider">WhatsApp</span>
+                </div>
+                <ChevronDown size={14} className="-rotate-90 opacity-50" />
+              </a>
+              <a 
+                href={`tel:${siteConfig.phoneFull}`} 
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-between px-5 py-4 bg-blue-50 text-secondary rounded-xl border border-blue-100"
+              >
+                <div className="flex items-center gap-3">
+                  <Phone size={20} className="text-secondary" />
+                  <span className="text-sm font-bold uppercase tracking-wider">Appeler</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-bold">{siteConfig.phone}</span>
+                  <ChevronDown size={14} className="-rotate-90 opacity-50" />
+                </div>
+              </a>
+            </div>
+          </div>
+
           <Link 
-            href="/rendez-vous"
+            href={siteConfig.links.booking}
             onClick={() => setMobileMenuOpen(false)}
-            className="bg-secondary text-white py-4 rounded-xl text-center text-sm font-bold uppercase tracking-widest"
+            className="bg-primary text-white py-4 rounded-xl text-center text-[11px] font-black uppercase tracking-[0.2em] shadow-lg shadow-primary/20"
           >
-            Prendre RDV
+            Prendre Rendez-vous
           </Link>
         </div>
       )}

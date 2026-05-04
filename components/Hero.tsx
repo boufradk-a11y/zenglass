@@ -70,7 +70,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 border-t border-white/20 pt-8 md:pt-10"
+            className="grid grid-cols-1 sm:grid-cols-4 gap-4 md:gap-8 border-t border-white/20 pt-8 md:pt-10"
           >
             <div className="flex items-center gap-3 md:gap-4 text-white">
               <CheckCircle className="text-secondary shrink-0" size={20} />
@@ -83,6 +83,10 @@ export function Hero() {
             <div className="flex items-center gap-3 md:gap-4 text-white">
               <CheckCircle className="text-secondary shrink-0" size={20} />
               <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider">Équipement moderne</span>
+            </div>
+            <div className="flex items-center gap-3 md:gap-4 text-white">
+              <CheckCircle className="text-secondary shrink-0" size={20} />
+              <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider">intervention dans toute la France en moins de 48h</span>
             </div>
           </MotionDiv>
         </div>

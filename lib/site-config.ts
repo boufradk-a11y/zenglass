@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: "Zen Glass",
   description: "Expert Pare-Brise - Réparation & Remplacement avec franchise offerte",
-  url: "https://zenglass.fr", // À adapter selon le domaine
-  phone: "01 23 45 67 89",
-  phoneFull: "+33123456789",
+  url: "https://zen-glass.com", // À adapter selon le domaine
+  phone: "06 66 63 81 58",
+  phoneFull: "+33666638158",
   address: {
     street: "123 Rue de l'Expertise",
     city: "Paris",

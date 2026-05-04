@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ShieldCheck, Phone, MapPin, Clock } from "lucide-react";
+import { siteConfig } from "@/lib/site-config";
 
 export function Footer() {
   return (
@@ -38,7 +39,7 @@ export function Footer() {
             <div className="space-y-6">
               <div className="flex items-center gap-4">
                 <Phone size={20} className="text-secondary" />
-                <span className="text-xl font-black">01 23 45 67 89</span>
+                <span className="text-xl font-black">{siteConfig.phone}</span>
               </div>
               <div className="flex items-center gap-4 text-white/60">
                 <MapPin size={20} />
@@ -46,7 +47,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-4 text-white/60">
                 <Clock size={20} />
-                <span className="text-xs font-bold uppercase">8h-19h - 6j/7</span>
+                <span className="text-xs font-bold uppercase">9h-19h - 6j/7 (dimanche fermé)</span>
               </div>
             </div>
           </div>

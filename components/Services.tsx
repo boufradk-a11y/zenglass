@@ -48,7 +48,7 @@ export function Services() {
                     <Gift size={24} strokeWidth={2.5} />
                   </div>
                   <h4 className="text-[11px] font-black uppercase tracking-widest text-primary mb-1">Franchise</h4>
-                  <p className="text-[9px] font-medium text-slate-500 uppercase">+{siteConfig.offers.franchise}€ offerts</p>
+                  <p className="text-[9px] font-medium text-slate-500 uppercase">jusqu'à {siteConfig.offers.franchise}€ offerts</p>
                 </div>
 
                 {/* Card 3: Compatible */}
@@ -110,11 +110,11 @@ export function Services() {
                 className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
               />
             </div>
-            <div className="p-8 md:w-1/2 flex flex-col justify-center">
+            <div className="p-4 md:w-1/2 flex flex-col justify-center">
               <Car className="text-secondary mb-4" size={32} />
-              <h4 className="text-xl font-bold uppercase mb-4">Remplacement</h4>
+              <h4 className="text-xl font-bold uppercase mb-4">remplacement de vitrage automobile</h4>
               <p className="text-muted text-sm leading-relaxed mb-6">
-                Pose de vitrage certifié d'origine. Nous intervenons sur toutes les marques et tous les modèles de véhicules.
+              Zen Glass est spécialisé dans le remplacement de pare-brises et de vitrages automobiles. Engagés à offrir des services de qualité et à garantir la satisfaction de nos clients, nous assurons des prestations professionnelles, conformes aux normes du secteur. Nous proposons également un service à domicile et une assistance pour les démarches d’assurance.
               </p>
             </div>
           </MotionDiv>

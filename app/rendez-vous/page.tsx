@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { ContactForm } from "@/components/ContactForm";
 import { ShieldCheck, ArrowLeft, Clock, MapPin, CheckSquare, Phone } from "lucide-react";
 import Link from "next/link";
+import { siteConfig } from "@/lib/site-config";
 
 export default function AppointmentPage() {
   return (
@@ -61,7 +62,7 @@ export default function AppointmentPage() {
               <p className="text-[9px] font-black uppercase tracking-widest text-muted mb-4">Besoin d'assistance ?</p>
               <a href="tel:0123456789" className="flex items-center gap-3 text-primary hover:text-secondary transition-colors group">
                 <Phone size={16} className="group-hover:scale-110 transition-transform" />
-                <span className="text-lg font-black tracking-tighter">01 23 45 67 89</span>
+                <span className="text-lg font-black tracking-tighter">{siteConfig.phone}</span>
               </a>
             </div>
           </div>
