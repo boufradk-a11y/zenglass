@@ -29,7 +29,6 @@ export function VehicleSelector({ onChange }: VehicleSelectorProps) {
     { id: "front" as const, label: "Pare-brise Avant" },
     { id: "back" as const, label: "Pare-brise Arrière" },
     { id: "sides" as const, label: "Vitres Latérales" },
-    { id: "roof" as const, label: "Toit Panoramique" },
     { id: "other" as const, label: "Autre" },
   ];
 
@@ -58,14 +57,14 @@ export function VehicleSelector({ onChange }: VehicleSelectorProps) {
               )}
               onClick={() => handleSelect("front")}
             />
-            <rect
+            {/* <rect
               x="75" y="130" width="50" height="70" rx="4"
               className={cn(
                 "cursor-pointer transition-colors duration-300 stroke-2",
                 selected === "roof" ? "fill-secondary stroke-secondary" : "fill-slate-100 stroke-primary/20 hover:fill-slate-200"
               )}
               onClick={() => handleSelect("roof")}
-            />
+            /> */}
             <path
               d="M70 220H130L135 250C135 260 120 270 100 270C80 270 65 260 65 250L70 220Z"
               className={cn(
@@ -144,7 +143,7 @@ export function VehicleSelector({ onChange }: VehicleSelectorProps) {
                 type="text" 
                 value={otherDetail}
                 onChange={handleDetailChange}
-                placeholder="Ex: Optique de phare, miroir..."
+                placeholder="Ex: la vitre de custode, le toit panoramique, etc."
                 className="w-full bg-white border border-secondary px-4 py-3 outline-none font-medium text-xs rounded-xl text-primary"
                 autoFocus
               />
