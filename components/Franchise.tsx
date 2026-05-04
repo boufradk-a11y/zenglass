@@ -35,10 +35,10 @@ export function Franchise() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
                 {[
-                  { icon: <ShieldCheck className="text-secondary" />, text: "Agréé toutes assurances" },
-                  { icon: <CheckCircle2 className="text-secondary" />, text: "0€ Avance de frais" },
-                  { icon: <Gift className="text-secondary" />, text: "Cadeau si 0€ franchise" },
-                  { icon: <Zap className="text-secondary" />, text: "Gestion 100% Zen" },
+                  { icon: <ShieldCheck className="text-accent" />, text: "Agréé toutes assurances" },
+                  { icon: <CheckCircle2 className="text-accent" />, text: "0€ Avance de frais" },
+                  { icon: <Gift className="text-accent" />, text: "Cadeau si 0€ franchise" },
+                  { icon: <Zap className="text-accent" />, text: "Gestion 100% Zen" },
                 ].map((item, i) => (
                   <MotionDiv 
                     key={i}

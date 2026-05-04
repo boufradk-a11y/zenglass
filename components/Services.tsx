@@ -85,7 +85,7 @@ export function Services() {
             </div>
             <div className="relative w-full md:w-1/2 min-h-[300px]">
               <Image 
-                src="/polo.webp"
+                src="/remplacement.png"
                 alt="Remplacement pare-brise"
                 fill
                 className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
