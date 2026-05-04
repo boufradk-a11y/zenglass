@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, ShieldCheck, Menu, X } from "lucide-react";
+import { Phone, ShieldCheck, Menu, X, MessageCircle, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -10,6 +10,9 @@ import { siteConfig } from "@/lib/site-config";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isPhoneMenuOpen, setIsPhoneMenuOpen] = useState(false);
+
+  const whatsappUrl = `https://wa.me/${siteConfig.phoneFull.replace("+", "")}?text=Bonjour, je souhaite un devis pour mon vitrage.`;
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-white border-b border-border shadow-sm">
@@ -36,13 +39,45 @@ export function Navbar() {
               Franchise Offerte
             </Link>
             <div className="flex items-center gap-6">
-              <a 
-                href={`tel:${siteConfig.phoneFull}`} 
-                className="flex items-center gap-2 text-primary font-bold border-l border-border pl-6"
-              >
-                <Phone size={18} className="text-secondary" />
-                {siteConfig.phone}
-              </a>
+              <div className="relative border-l border-border pl-6">
+                <button 
+                  onClick={() => setIsPhoneMenuOpen(!isPhoneMenuOpen)}
+                  className="flex items-center gap-2 text-primary font-bold transition-colors hover:text-secondary"
+                >
+                  <Phone size={18} className="text-secondary" />
+                  {siteConfig.phone}
+                  <ChevronDown size={14} className={cn("transition-transform duration-200", isPhoneMenuOpen && "rotate-180")} />
+                </button>
+
+                {/* Dropdown Menu */}
+                <div 
+                  className={cn(
+                    "absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white border border-border shadow-xl rounded-xl overflow-hidden transition-all duration-200 origin-top",
+                    isPhoneMenuOpen ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+                  )}
+                >
+                  <div className="p-2 space-y-1">
+                    <a 
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsPhoneMenuOpen(false)}
+                      className="flex items-center gap-3 px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-primary hover:bg-green-50 hover:text-green-600 transition-colors rounded-lg"
+                    >
+                      <MessageCircle size={18} className="text-green-500" />
+                      Devis par WhatsApp
+                    </a>
+                    <a 
+                      href={`tel:${siteConfig.phoneFull}`} 
+                      onClick={() => setIsPhoneMenuOpen(false)}
+                      className="flex items-center gap-3 px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-primary hover:bg-blue-50 hover:text-secondary transition-colors rounded-lg"
+                    >
+                      <Phone size={18} className="text-secondary" />
+                      Devis par Téléphone
+                    </a>
+                  </div>
+                </div>
+              </div>
               <Link 
                 href={siteConfig.links.booking}
                 className="bg-primary text-white px-6 py-3 text-[10px] font-black uppercase tracking-widest hover:bg-accent transition-colors rounded-lg"
