@@ -29,8 +29,8 @@ export function Franchise() {
               </h3>
               
               <p className="text-xl text-white/70 mb-10 leading-relaxed max-w-lg">
-                On s&apos;occupe de tout. Si vous avez une franchise, <span className="text-white font-bold">{siteConfig.name} la prend en charge jusqu&apos;à {siteConfig.offers.franchise}€</span>. 
-                Pas de franchise ? Repartez avec une <span className="text-secondary font-bold">Carte Cadeau de {siteConfig.offers.franchise}€</span>.
+                On s&apos;occupe de tout. Si vous avez une franchise, <span className="text-white font-bold">{siteConfig.name} la prend en charge et jusqu&apos;à {siteConfig.offers.franchise}€ offert</span>. 
+                
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
