@@ -25,9 +25,9 @@ export function Hero() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="border-l-4 border-secondary pl-4 md:pl-6 mb-6 md:mb-8"
+            className="border-l-4 border-accent pl-4 md:pl-6 mb-6 md:mb-8"
           >
-            <h2 className="text-secondary text-[10px] md:text-sm font-black uppercase tracking-[0.2em] md:tracking-[0.3em] mb-2">
+            <h2 className="text-accent text-[10px] md:text-sm font-black uppercase tracking-[0.2em] md:tracking-[0.3em] mb-2">
               Spécialiste du vitrage automobile
             </h2>
             <h1 className="text-3xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] md:leading-tight uppercase">
@@ -74,15 +74,15 @@ export function Hero() {
           >
             <div className="flex items-center gap-3 md:gap-4 text-white">
               <CheckCircle className="text-secondary shrink-0" size={20} />
-              <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider">0€ Avance de frais</span>
+              <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider">Service de qualité</span>
             </div>
             <div className="flex items-center gap-3 md:gap-4 text-white">
               <CheckCircle className="text-secondary shrink-0" size={20} />
-              <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider">Agréé Assurances</span>
+              <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider">Techniciens expert</span>
             </div>
             <div className="flex items-center gap-3 md:gap-4 text-white">
               <CheckCircle className="text-secondary shrink-0" size={20} />
-              <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider">Garantie à vie</span>
+              <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider">Équipement moderne</span>
             </div>
           </MotionDiv>
         </div>

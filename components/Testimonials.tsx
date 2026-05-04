@@ -45,7 +45,7 @@ export function Testimonials() {
       <div className="container-custom">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div className="max-w-2xl">
-            <h2 className="text-secondary font-black uppercase tracking-[0.3em] text-[10px] mb-4">Avis Clients</h2>
+            <h2 className="text-accent font-black uppercase tracking-[0.3em] text-[10px] mb-4">Avis Clients</h2>
             <h3 className="text-3xl md:text-5xl font-black text-primary uppercase leading-none tracking-tighter">
               Ils nous ont <br />
               <span className="text-secondary italic">fait confiance</span>

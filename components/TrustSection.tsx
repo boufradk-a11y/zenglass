@@ -27,17 +27,31 @@ export function TrustSection() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
               <div className="flex flex-col gap-4">
-                <FileText className="text-secondary" size={32} />
-                <h4 className="text-lg font-bold uppercase tracking-tight">Service de qualité</h4>
-                <p className="text-white/40 text-sm leading-relaxed">
+                <FileText className="text-accent" size={32} />
+                <h4 className="text-lg font-bold uppercase tracking-tight ">Service de qualité</h4>
+                <p className="text-white/80 text-sm leading-relaxed">
                   Nous garantissons un remplacement rapide et fiable avec 0€ à avancer et sans paperasse.
                 </p>
               </div>
               <div className="flex flex-col gap-4">
-                <Clock className="text-secondary" size={32} />
-                <h4 className="text-lg font-bold uppercase tracking-tight">techniciens experts</h4>
-                <p className="text-white/40 text-sm leading-relaxed">
+                <Clock className="text-accent" size={32} />
+                <h4 className="text-lg font-bold uppercase tracking-tight ">techniciens experts</h4>
+                <p className="text-white/80 text-sm leading-relaxed">
                   Nos techniciens qualifiés prennent en charge tous les types de véhicules et toutes les marques avec un haut niveau de professionnalisme.
+                </p>
+              </div>
+              <div className="flex flex-col gap-4">
+                <FileText className="text-accent" size={32} />
+                <h4 className="text-lg font-bold uppercase tracking-tight  ">Respect de la tarification constructeur                </h4>
+                <p className="text-white/80 text-sm leading-relaxed">
+                Vitrages Conformes aux normes européennes 43-R
+                </p>
+              </div>
+              <div className="flex flex-col gap-4">
+                <Clock className="text-accent" size={32} />
+                <h4 className="text-lg font-bold uppercase tracking-tight  ">Équipements Modernes                </h4>
+                <p className="text-white/80 text-sm leading-relaxed">
+                  Nous utilisons des équipements de pointe pour garantir une intervention rapide et efficace.
                 </p>
               </div>
             </div>          </MotionDiv>
@@ -62,10 +76,10 @@ export function TrustSection() {
               <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-center text-center items-center">
                 <p className="text-2xl font-black uppercase tracking-tighter mb-4">On vous rend les clés</p>
                 <div className="h-1 w-20 bg-secondary mb-6"></div>
-                <p className="text-sm text-white/90 leading-relaxed italic max-w-xs">
-                  "Notre mission : vous simplifier la vie. On vient, on répare, vous repartez l'esprit tranquille."
+                <p className="p-2 bg-white/60 rounded-lg text-sm text-secondary font-bold leading-relaxed italic max-w-xs">
+                  "Notre mission : vous simplifier la vie. On vient, on répare, vous êtes <span className="text-secondary font-bold italic">zen,</span> on repart."
                 </p>
-                <div className="mt-8 flex items-center gap-2 text-secondary font-bold text-xs uppercase tracking-widest">
+                <div className="mt-8 flex items-center gap-2 text-accent font-bold text-xs uppercase tracking-widest">
                   <ShieldCheck size={16} /> Expertise Certifiée
                 </div>
               </div>

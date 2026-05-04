@@ -17,7 +17,8 @@ export function Services() {
         >
           <h3 className="text-3xl md:text-5xl font-black text-primary uppercase leading-none">
             Soyez zen, <br />
-            <span className="text-secondary italic">votre pare-brise notre maîtrise</span>
+            <span className="text-secondary italic">votre pare-brise, </span>
+            <span className="text-accent italic">notre maîtrise !</span>
           </h3>
         </MotionDiv>
 
@@ -109,8 +110,8 @@ export function Services() {
             className="bg-slate-50 p-8 border-l-4 border-secondary rounded-xl"
           >
             <Zap className="text-secondary mb-4" size={28} />
-            <h5 className="font-black uppercase text-lg mb-2 tracking-tight">Calibrage ADAS</h5>
-            <p className="text-muted text-xs leading-relaxed">Recalibrage des systèmes de sécurité (caméras, capteurs) après chaque remplacement de pare-brise.</p>
+            <h5 className="font-black uppercase text-lg mb-2 tracking-tight">Rapide et efficace</h5>
+            <p className="text-muted text-xs leading-relaxed">obtenez votre rendez-vous en moin de 24h.</p>
           </MotionDiv>
 
           <MotionDiv 

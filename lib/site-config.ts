@@ -12,7 +12,7 @@ export const siteConfig = {
     country: "FR",
   },
   offers: {
-    franchise: 150,
+    franchise: 200,
     gift: 200,
   },
   links: {

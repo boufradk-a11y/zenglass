@@ -55,7 +55,7 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
                 <div>
                   <div className="flex gap-1 mb-6">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={14} fill="#0056b3" className="text-secondary" />
+                      <Star key={i} size={14} fill="#e11d48" className="text-accent" />
                     ))}
                   </div>
                   <p className="text-primary font-medium leading-relaxed mb-8">

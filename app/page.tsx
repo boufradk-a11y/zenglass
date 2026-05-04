@@ -5,18 +5,35 @@ import { Franchise } from "@/components/Franchise";
 import { TrustSection } from "@/components/TrustSection";
 import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="relative min-h-screen">
       <Navbar />
       <Hero />
       <Services />
       <Franchise />
-
       <TrustSection />
       <Testimonials />
       <Footer />
+      <div className="fixed bottom-0 right-0 z-[100] flex items-start justify-end p-4">
+        <a
+          href="https://wa.me/33768986150"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center w-12 h-12 bg-green-500 rounded-full shadow-lg hover:bg-green-600"
+          aria-label="Chat on WhatsApp"
+        >
+          <Image 
+            src="/whatsapp.svg" 
+            alt="whatsapp" 
+            width={32} 
+            height={32} 
+            className=""
+          />
+        </a>
+      </div>
     </main>
   );
 }
