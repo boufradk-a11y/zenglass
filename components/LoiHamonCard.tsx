@@ -19,7 +19,7 @@ export function LoiHamonCard() {
         className="bg-slate-50 p-8 border-l-4 border-accent rounded-xl flex flex-col h-full relative"
       >
         {/* Badge Notification Style */}
-        <div className="absolute -top-4 -left-4 w-16 h-16 rounded-full overflow-hidden border-4 border-white shadow-lg z-10">
+        <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-lg z-10">
           <Image 
             src="/loi.webp"
             alt="Loi Hamon"

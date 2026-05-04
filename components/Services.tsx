@@ -30,47 +30,66 @@ export function Services() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="border border-border p-0 flex flex-col md:flex-row rounded-xl overflow-hidden"
           >
-            {/* Image with Icon Overlay */}
-            <div className="relative w-full md:w-1/2 min-h-[320px] flex items-center justify-center p-6">
-              <Image 
-                src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=800&auto=format&fit=crop"
-                alt="Réparation d'impact"
-                fill
-                className="object-cover grayscale"
-              />
-              <div className="absolute inset-0 bg-black/60" />
-              
-              <div className="relative z-10 grid grid-cols-2 gap-3 w-full">
-                <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl flex flex-col items-center justify-center text-center shadow-xl border border-white/20">
-                  <Handshake className="text-white mb-2" size={22} />
-                  <p className="text-[9px] font-black uppercase tracking-tighter leading-none mb-1 text-white">0 Paperasse</p>
-                  <p className="text-[7px] font-bold text-white/70 uppercase">0€ à avancer</p>
+            {/* Grid of Service Cards */}
+            <div className="relative w-full min-h-[360px] flex items-center justify-center p-6 bg-white rounded-xl overflow-hidden">
+              <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
+                {/* Card 1: Paperasse */}
+                <div className="group relative overflow-hidden bg-slate-50 border border-slate-100 rounded-2xl p-5 flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-white hover:border-accent/30 hover:shadow-xl hover:-translate-y-1">
+                  <div className="bg-accent/10 p-3 rounded-xl mb-3 text-accent transition-transform duration-300 group-hover:scale-110">
+                    <Handshake size={24} strokeWidth={2.5} />
+                  </div>
+                  <h4 className="text-[11px] font-black uppercase tracking-widest text-primary mb-1">0 Paperasse</h4>
+                  <p className="text-[9px] font-medium text-slate-500 uppercase">0€ à avancer</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl flex flex-col items-center justify-center text-center shadow-xl border border-white/20">
-                  <Gift className="text-white mb-2" size={22} />
-                  <p className="text-[9px] font-black uppercase tracking-tighter leading-none mb-1 text-white">Franchise</p>
-                  <p className="text-[7px] font-bold text-white/70 uppercase">+{siteConfig.offers.franchise}€ offerts</p>
+
+                {/* Card 2: Franchise */}
+                <div className="group relative overflow-hidden bg-slate-50 border border-slate-100 rounded-2xl p-5 flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-white hover:border-secondary/30 hover:shadow-xl hover:-translate-y-1">
+                  <div className="bg-secondary/10 p-3 rounded-xl mb-3 text-secondary transition-transform duration-300 group-hover:scale-110">
+                    <Gift size={24} strokeWidth={2.5} />
+                  </div>
+                  <h4 className="text-[11px] font-black uppercase tracking-widest text-primary mb-1">Franchise</h4>
+                  <p className="text-[9px] font-medium text-slate-500 uppercase">+{siteConfig.offers.franchise}€ offerts</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl flex flex-col items-center justify-center text-center shadow-xl border border-white/20 border-accent/30">
-                  <CheckCircle2 className="text-accent mb-2" size={22} />
-                  <p className="text-[9px] font-black uppercase tracking-tighter leading-none mb-1 text-white">Compatible</p>
-                  <p className="text-[7px] font-bold text-white/70 uppercase">Toutes assurances</p>
+
+                {/* Card 3: Compatible */}
+                <div className="group relative overflow-hidden bg-slate-50 border border-accent/20 rounded-2xl p-5 flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-white hover:border-accent/40 hover:shadow-xl hover:-translate-y-1">
+                  <div className="bg-accent/10 p-3 rounded-xl mb-3 text-accent transition-transform duration-300 group-hover:scale-110">
+                    <CheckCircle2 size={24} strokeWidth={2.5} />
+                  </div>
+                  <h4 className="text-[11px] font-black uppercase tracking-widest text-primary mb-1">Compatible</h4>
+                  <p className="text-[9px] font-medium text-slate-500 uppercase">Toutes assurances</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl flex flex-col items-center justify-center text-center shadow-xl border border-white/20">
-                  <Car className="text-white mb-2" size={22} />
-                  <p className="text-[9px] font-black uppercase tracking-tighter leading-none mb-1 text-white">Tous véhicules</p>
-                  <p className="text-[7px] font-bold text-white/70 uppercase">Toutes marques</p>
+
+                {/* Card 4: Tous véhicules */}
+                <div className="group relative overflow-hidden bg-slate-50 border border-slate-100 rounded-2xl p-5 flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-white hover:border-primary/30 hover:shadow-xl hover:-translate-y-1">
+                  <div className="bg-primary/10 p-3 rounded-xl mb-3 text-primary transition-transform duration-300 group-hover:scale-110">
+                    <Car size={24} strokeWidth={2.5} />
+                  </div>
+                  <h4 className="text-[11px] font-black uppercase tracking-widest text-primary mb-1">Tous véhicules</h4>
+                  <p className="text-[9px] font-medium text-slate-500 uppercase">Toutes marques</p>
+                </div>
+
+                {/* Card 5: Tarification Constructeur */}
+                <div className="group relative overflow-hidden bg-slate-50 border border-slate-100 rounded-2xl p-5 flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-white hover:border-secondary/30 hover:shadow-xl hover:-translate-y-1">
+                  <div className="bg-secondary/10 p-3 rounded-xl mb-3 text-secondary transition-transform duration-300 group-hover:scale-110">
+                    <Hammer size={24} strokeWidth={2.5} />
+                  </div>
+                  <h4 className="text-[11px] font-black uppercase tracking-widest text-primary mb-1">Prix Constructeur</h4>
+                  <p className="text-[9px] font-medium text-slate-500 uppercase">Respect de la tarification</p>
+                </div>
+
+                {/* Card 6: Normes Européennes */}
+                <div className="group relative overflow-hidden bg-slate-50 border border-slate-100 rounded-2xl p-5 flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-white hover:border-accent/30 hover:shadow-xl hover:-translate-y-1">
+                  <div className="bg-accent/10 p-3 rounded-xl mb-3 text-accent transition-transform duration-300 group-hover:scale-110">
+                    <Zap size={24} strokeWidth={2.5} />
+                  </div>
+                  <h4 className="text-[11px] font-black uppercase tracking-widest text-primary mb-1">Normes EU 43-R</h4>
+                  <p className="text-[9px] font-medium text-slate-500 uppercase">Vitrages certifiés</p>
                 </div>
               </div>
             </div>
             
-            <div className="p-8 md:w-1/2 flex flex-col justify-center">
-              <Hammer className="text-secondary mb-4" size={32} />
-              <h4 className="text-xl font-bold uppercase mb-4">Réparation d'Impact</h4>
-              <p className="text-muted text-sm leading-relaxed mb-6">
-                Un éclat sur votre pare-brise ? Nous réparons l'impact en 30 minutes avant qu'il ne fissure, sans frais pour vous.
-              </p>
-            </div>
+            
           </MotionDiv>
 
           <MotionDiv 
