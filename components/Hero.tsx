@@ -55,7 +55,7 @@ export function Hero() {
               href={siteConfig.links.booking} 
               className="bg-secondary text-white px-6 md:px-10 py-4 md:py-5 rounded-xl text-xs font-black uppercase tracking-[0.2em] hover:bg-blue-700 transition-all text-center"
             >
-              Prendre Rendez-vous
+              Prendre Rendez-vous en 2 min
             </Link>
             <a 
               href={`tel:${siteConfig.phoneFull}`} 

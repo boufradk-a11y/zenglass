@@ -37,7 +37,7 @@ export function Franchise() {
                 {[
                   { icon: <ShieldCheck className="text-accent" />, text: "Agréé toutes assurances" },
                   { icon: <CheckCircle2 className="text-accent" />, text: "0€ Avance de frais" },
-                  { icon: <Gift className="text-accent" />, text: "Cadeau si 0€ franchise" },
+                  { icon: <Gift className="text-accent" />, text: "Jusqu'à 200€ offert" },
                   { icon: <Zap className="text-accent" />, text: "Gestion 100% Zen" },
                 ].map((item, i) => (
                   <MotionDiv 
