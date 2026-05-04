@@ -138,11 +138,11 @@ export function Navbar() {
           </div>
 
           <Link 
-            href={siteConfig.links.booking}
+            href="/rendez-vous"
             onClick={() => setMobileMenuOpen(false)}
-            className="bg-primary text-white py-4 rounded-xl text-center text-[11px] font-black uppercase tracking-[0.2em] shadow-lg shadow-primary/20"
+            className="bg-secondary text-white py-4 rounded-xl text-center text-sm font-bold uppercase tracking-widest"
           >
-            Prendre Rendez-vous
+            Prendre RDV
           </Link>
         </div>
       )}

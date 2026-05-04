@@ -1,13 +1,18 @@
 "use client";
 
-import React, { useState } from "react";
-import { Send, Phone, User, ClipboardList, MessageSquare, ArrowRight, ArrowLeft, Car, Mail, CheckCircle2, AlertCircle } from "lucide-react";
+import React, { useState, useTransition } from "react";
+import { Send, Phone, User, ClipboardList, MessageSquare, ArrowRight, ArrowLeft, Car, Mail, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { VehicleSelector } from "./VehicleSelector";
 import { cn } from "@/lib/utils";
+import { sendEmailAction } from "@/app/actions/send-email";
 
 export function ContactForm() {
   const [step, setStep] = useState(1);
   const [glassType, setGlassType] = useState("front");
+  const [isPending, startTransition] = useTransition();
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
   const [formData, setFormData] = useState({
     brand: "",
     model: "",
@@ -78,9 +83,21 @@ export function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitError("");
+    
     if (validateStep(3)) {
-      console.log("Form submitted:", { glassType, ...formData });
-      alert("Formulaire envoyé avec succès !");
+      startTransition(async () => {
+        const result = await sendEmailAction({
+          glassType,
+          ...formData
+        });
+
+        if (result.success) {
+          setSubmitSuccess(true);
+        } else {
+          setSubmitError(result.error || "Une erreur s'est produite lors de l'envoi.");
+        }
+      });
     }
   };
 
@@ -89,6 +106,20 @@ export function ContactForm() {
     { id: 2, label: "Véhicule" },
     { id: 3, label: "Contact" }
   ];
+
+  if (submitSuccess) {
+    return (
+      <div className="flex flex-col items-center justify-center p-10 text-center space-y-4 bg-green-50 rounded-2xl border border-green-100">
+        <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white mb-4">
+          <CheckCircle2 size={32} />
+        </div>
+        <h3 className="text-2xl font-black text-green-800">Demande Envoyée !</h3>
+        <p className="text-green-700 font-medium">
+          Nous avons bien reçu votre demande. Notre équipe vous contactera très rapidement pour confirmer votre rendez-vous.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -329,19 +360,32 @@ export function ContactForm() {
             </div>
           </div>
 
+          {submitError && (
+            <div className="bg-red-50 text-red-600 p-4 rounded-xl border border-red-100 flex items-start gap-3 mt-4">
+              <AlertCircle size={20} className="shrink-0 mt-0.5" />
+              <p className="text-sm font-medium">{submitError}</p>
+            </div>
+          )}
+
           <div className="flex justify-between mt-8">
             <button 
               type="button" 
               onClick={prevStep}
-              className="px-6 py-4 font-black uppercase tracking-[0.2em] text-[10px] flex items-center gap-2 text-primary hover:bg-slate-100 transition-all rounded-xl"
+              disabled={isPending}
+              className="px-6 py-4 font-black uppercase tracking-[0.2em] text-[10px] flex items-center gap-2 text-primary hover:bg-slate-100 transition-all rounded-xl disabled:opacity-50"
             >
               <ArrowLeft size={14} /> Retour
             </button>
             <button 
               type="submit" 
-              className="bg-secondary text-white px-10 py-4 font-black uppercase tracking-[0.3em] text-[10px] flex items-center gap-2 hover:bg-blue-700 transition-all shadow-xl shadow-secondary/20 rounded-xl"
+              disabled={isPending}
+              className="bg-secondary text-white px-10 py-4 font-black uppercase tracking-[0.3em] text-[10px] flex items-center gap-2 hover:bg-blue-700 transition-all shadow-xl shadow-secondary/20 rounded-xl disabled:opacity-70"
             >
-              Finaliser <Send size={14} />
+              {isPending ? (
+                <>Envoi en cours <Loader2 size={14} className="animate-spin" /></>
+              ) : (
+                <>Finaliser <Send size={14} /></>
+              )}
             </button>
           </div>
         </div>

@@ -60,7 +60,7 @@ export default function AppointmentPage() {
 
             <div className="p-6 bg-slate-50 border border-border">
               <p className="text-[9px] font-black uppercase tracking-widest text-muted mb-4">Besoin d'assistance ?</p>
-              <a href="tel:0123456789" className="flex items-center gap-3 text-primary hover:text-secondary transition-colors group">
+              <a href={`tel:${siteConfig.phoneFull}`} className="flex items-center gap-3 text-primary hover:text-secondary transition-colors group">
                 <Phone size={16} className="group-hover:scale-110 transition-transform" />
                 <span className="text-lg font-black tracking-tighter">{siteConfig.phone}</span>
               </a>
