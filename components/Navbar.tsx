@@ -20,9 +20,9 @@ export function Navbar() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="relative w-48 h-12">
+            <div className="relative w-64 h-18">
               <Image 
-                src="/zenglass_logo_fidele_name.svg" 
+                src="/logo_propre.png" 
                 alt={`${siteConfig.name} Logo`} 
                 fill
                 className="object-contain object-left"
