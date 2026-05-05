@@ -54,6 +54,7 @@ export default function AppointmentPage() {
                 <div>
                   <p className="font-black text-[11px] uppercase tracking-tight text-primary">Garantie à vie</p>
                   <p className="text-[10px] text-muted font-medium mt-1 leading-relaxed">Toutes nos poses de vitrage sont garanties à vie sur l'étanchéité.</p>
+                  
                 </div>
               </div>
             </div>
