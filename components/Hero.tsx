@@ -4,7 +4,11 @@ import { Phone, CheckCircle } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { MotionDiv, MotionP } from "./ui/motion";
 
-export function Hero() {
+export function Hero({ cityName }: { cityName?: string }) {
+  const primaryTitle = cityName 
+    ? `Remplacement de Pare-Brise à ${cityName}` 
+    : `Remplacement de Pare-Brise à domicile`;
+
   return (
     <section className="relative min-h-screen flex items-center pt-20">
       {/* Real Photo Background */}
@@ -31,8 +35,8 @@ export function Hero() {
               Spécialiste du vitrage automobile
             </h2>
             <h1 className="text-3xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] md:leading-tight uppercase">
-              Remplacement de <br />
-              <span className="text-secondary">Pare-Brise à domicile</span> <br className="hidden md:block" />
+              {primaryTitle.split('<br />')[0]} <br />
+              <span className="text-secondary">{primaryTitle.split('<br />')[1] || ''}</span> <br className="hidden md:block" />
             </h1>
           </MotionDiv>
 

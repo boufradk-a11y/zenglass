@@ -2,13 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { ShieldCheck, Phone, MapPin, Clock } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+import { targetCities } from "@/app/sitemap";
 
 export function Footer() {
   return (
     <footer className="bg-primary text-white pt-20 pb-10">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-          <div className="col-span-1 md:col-span-2">
+          <div className="col-span-1">
             <Link href="/" className="flex items-center mb-8">
               <div className="relative w-56 h-14">
                 <Image 
@@ -31,6 +32,22 @@ export function Footer() {
               <li><Link href="#services" className="hover:text-primary transition-colors">Remplacement Pare-Brise</Link></li>
               <li><Link href="#services" className="hover:text-white transition-colors">Lunette Arrière</Link></li>
               <li><Link href="#services" className="hover:text-white transition-colors">Vitres Latérales</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 className="font-bold uppercase tracking-widest text-xs mb-8 text-secondary">Zones d'Intervention</h5>
+            <ul className="grid grid-cols-2 gap-y-4 gap-x-2 text-sm font-bold uppercase tracking-tight text-white/60">
+              {targetCities.slice(0, 8).map((city) => ( // Limiter à 8 villes pour la clarté
+                <li key={city}>
+                  <Link href={`/ville/${city}`} className="hover:text-white transition-colors">
+                    {city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+                  </Link>
+                </li>
+              ))}
+              {targetCities.length > 8 && (
+                <li><Link href="/zones-intervention" className="hover:text-white transition-colors">...</Link></li>
+              )}
             </ul>
           </div>
 

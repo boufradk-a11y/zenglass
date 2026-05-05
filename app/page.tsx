@@ -4,6 +4,7 @@ import { Services } from "@/components/Services";
 import { Franchise } from "@/components/Franchise";
 import { TrustSection } from "@/components/TrustSection";
 import { Testimonials } from "@/components/Testimonials";
+import { FAQ } from "@/components/FAQ"; // Import the new FAQ component
 import { Footer } from "@/components/Footer";
 import Image from "next/image";
 
@@ -16,6 +17,7 @@ export default function Home() {
       <Franchise />
       <TrustSection />
       <Testimonials />
+      <FAQ /> {/* Add the FAQ component here */}
       <Footer />
       <div className="fixed bottom-0 right-0 z-[100] flex items-start justify-end p-4">
         <a
@@ -27,7 +29,7 @@ export default function Home() {
         >
           <Image 
             src="/whatsapp.svg" 
-            alt="whatsapp" 
+            alt="Contact WhatsApp Zen Glass" 
             width={32} 
             height={32} 
             className=""

@@ -20,7 +20,7 @@ export const targetCities = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const cityUrls = targetCities.map((city) => ({
-    url: `${siteConfig.url}/remplacement-pare-brise-${city}`,
+    url: `${siteConfig.url}/ville/${city}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.8,
