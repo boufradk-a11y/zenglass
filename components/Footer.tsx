@@ -28,8 +28,8 @@ export function Footer() {
           <div>
             <h5 className="font-bold uppercase tracking-widest text-xs mb-8 text-secondary">Prestations</h5>
             <ul className="space-y-4 text-sm font-bold uppercase tracking-tight text-white/60">
-              <li><Link href="#services" className="hover:text-white transition-colors">Réparation d'Impact</Link></li>
-              <li><Link href="#services" className="hover:text-primary transition-colors">Remplacement Pare-Brise</Link></li>
+              <li><Link href="#services" className="hover:text-white transition-colors">Toit Panoramique</Link></li>
+              <li><Link href="#services" className="hover:text-white transition-colors">Remplacement Pare-Brise</Link></li>
               <li><Link href="#services" className="hover:text-white transition-colors">Lunette Arrière</Link></li>
               <li><Link href="#services" className="hover:text-white transition-colors">Vitres Latérales</Link></li>
             </ul>
@@ -37,7 +37,7 @@ export function Footer() {
 
           <div>
             <h5 className="font-bold uppercase tracking-widest text-xs mb-8 text-secondary">Zones d'Intervention</h5>
-            <ul className="grid grid-cols-2 gap-y-4 gap-x-2 text-sm font-bold uppercase tracking-tight text-white/60">
+            {/* <ul className="grid grid-cols-2 gap-y-4 gap-x-2 text-sm font-bold uppercase tracking-tight text-white/60">
               {targetCities.slice(0, 8).map((city) => ( // Limiter à 8 villes pour la clarté
                 <li key={city}>
                   <Link href={`/ville/${city}`} className="hover:text-white transition-colors">
@@ -48,7 +48,8 @@ export function Footer() {
               {targetCities.length > 8 && (
                 <li><Link href="/zones-intervention" className="hover:text-white transition-colors">...</Link></li>
               )}
-            </ul>
+            </ul> */}
+            <Link href="/zones-intervention" className="hover:text-white transition-colors">Disponible dans toute la France</Link>
           </div>
 
           <div>

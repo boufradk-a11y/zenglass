@@ -36,7 +36,7 @@ export function Navbar() {
               Nos Services
             </Link>
             <Link href="/#franchise" className="text-xs font-bold uppercase tracking-widest text-primary hover:text-secondary transition-colors text-accent">
-              Franchise Offerte
+              Franchise Offerte + jusqu’à 200€
             </Link>
             <div className="flex items-center gap-6">
               <div className="relative border-l border-border pl-6">
@@ -101,7 +101,7 @@ export function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-b border-border p-6 flex flex-col gap-6 animate-in slide-in-from-top duration-200">
           <Link href="/#services" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold uppercase tracking-widest text-primary">Services</Link>
-          <Link href="/#franchise" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold uppercase tracking-widest text-primary">Franchise Offerte</Link>
+          <Link href="/#franchise" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold uppercase tracking-widest text-primary">Franchise Offerte + jusqu’à 200€</Link>
           <hr className="border-border" />
           
           <div className="space-y-4">

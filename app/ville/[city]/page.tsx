@@ -67,7 +67,7 @@ export default async function CityPage({ params }: Props) {
       {/* Bouton WhatsApp Flottant */}
       <div className="fixed bottom-6 right-6 z-[100]">
         <a
-          href="https://wa.me/33768986150"
+          href="https://wa.me/33666638158"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-110 transition-transform active:scale-95 group"

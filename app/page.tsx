@@ -21,7 +21,7 @@ export default function Home() {
       <Footer />
       <div className="fixed bottom-0 right-0 z-[100] flex items-start justify-end p-4">
         <a
-          href="https://wa.me/33768986150"
+          href="https://wa.me/33666638158"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center w-12 h-12 bg-green-500 rounded-full shadow-lg hover:bg-green-600"

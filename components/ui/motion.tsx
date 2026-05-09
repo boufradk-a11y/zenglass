@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 export const MotionDiv = motion.div;
 export const MotionP = motion.p;
 export const MotionSection = motion.section;
+export const MotionH2 = motion.h2;
 export const MotionH3 = motion.h3;
 export const MotionH4 = motion.h4;
 export const MotionSpan = motion.span;

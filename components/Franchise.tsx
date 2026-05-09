@@ -57,14 +57,40 @@ export function Franchise() {
               </div>
               
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <a 
                   href={siteConfig.links.booking} 
-                  className="bg-secondary text-white px-8 py-5 rounded-xl text-sm font-black uppercase tracking-widest hover:bg-blue-600 transition-all text-center "
+                  className="bg-secondary text-white px-8 py-5 rounded-xl text-sm font-black uppercase tracking-widest hover:bg-blue-600 transition-all text-center"
                 >
                   J&apos;en profite maintenant
                 </a>
               </div>
+
+              {/* Discreet No-Insurance Mention */}
+              <MotionDiv
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6 }}
+                className="pt-2 border-t border-white/10 flex flex-col md:flex-row items-center gap-6"
+              >
+                <div className="flex-1">
+                  <p className="text-white font-bold uppercase text-[18px] tracking-widest mb-1 flex items-center gap-2">
+                    <span className="w-2 h-2 bg-secondary rounded-full animate-pulse" /> Sans assurance ?
+                  </p>
+                  <p className="text-white/70 text-[15px] leading-relaxed italic">
+                    Pas de bris de glace ? Nous remplaçons votre pare-brise avec un tarif transparent adapté à votre budget.
+                  </p>
+                </div>
+                <a 
+                  href="https://wa.me/33666638158"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-xl font-black uppercase text-[9px] tracking-widest hover:bg-[#20ba59] transition-all"
+                >
+                  Devis WhatsApp Gratuit
+                </a>
+              </MotionDiv>
             </div>
 
             {/* Right Image/Visual */}

@@ -33,7 +33,7 @@ const testimonials = [
   {
     name: "Julie V.",
     date: "Il y a 2 mois",
-    content: "Remplacement parfait sur ma Clio. Le système de caméra (ADAS) a bien été recalibré, tout fonctionne parfaitement.",
+    content: "Remplacement parfait sur ma Clio.",
     rating: 5,
     color: "bg-slate-100"
   }
