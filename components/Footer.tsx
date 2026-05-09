@@ -26,7 +26,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h5 className="font-bold uppercase tracking-widest text-xs mb-8 text-secondary">Prestations</h5>
+            <h5 className="font-bold uppercase tracking-widest text-xs mb-8 text-secondary">Nos services de remplacement</h5>
             <ul className="space-y-4 text-sm font-bold uppercase tracking-tight text-white/60">
               <li><Link href="#services" className="hover:text-white transition-colors">Toit Panoramique</Link></li>
               <li><Link href="#services" className="hover:text-white transition-colors">Remplacement Pare-Brise</Link></li>
