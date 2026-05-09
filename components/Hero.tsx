@@ -46,7 +46,7 @@ export function Hero({ cityName }: { cityName?: string }) {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="text-base md:text-2xl text-white/90 max-w-2xl mb-8 md:mb-12 font-medium leading-relaxed"
           >
-            Profitez de votre <span className="text-white font-black underline decoration-accent underline-offset-4">franchise offerte</span> et jusqu&apos;à <span className="text-white font-black">{siteConfig.offers.gift}€</span>. <br className="hidden md:block" /> Intervention rapide à domicile ou au bureau.
+            Profitez de votre <span className="text-white font-black">franchise offerte</span> et jusqu&apos;à <span className="text-white font-black">{siteConfig.offers.gift}€</span>. <br className="hidden md:block" /> Intervention rapide à domicile ou au bureau.
           </MotionP>
 
           <MotionDiv 
